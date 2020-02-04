@@ -38,6 +38,8 @@ textarea {
     border-radius: 5px;
     background: $green;    
     font-weight: bold;
+    border: 0px solid; 
+    color: $green;
 } 
 
 .navbar .nav > li > a{
@@ -126,6 +128,7 @@ footer a {
 }
 
 footer a:hover {
+  margin-right: 20px;
   color: $gray-darker; 
 }
 

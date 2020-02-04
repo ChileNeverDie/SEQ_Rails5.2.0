@@ -9,8 +9,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :title, presence: true, length: {maximum: 20}, inclusion: {in:['SQE','Senior SQE','Intern'],message:'Must be one of "Intern", "SQE", "Senior SQE"'} 
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}, allow_nil: true 
-  
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true 
+
   class << self
   # 返回指定字符串的哈希摘要
     def digest(string)
