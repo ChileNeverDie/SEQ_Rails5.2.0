@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
+  has_many :problems, dependent: :destroy
   
   before_save { email.downcase! }
   validates :name, presence: true, length: {maximum: 20}
@@ -41,4 +42,10 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+  
+  # 实现动态流原型
+  def feed
+    Problem.where("user_id = ?", id)
+  end
+
 end

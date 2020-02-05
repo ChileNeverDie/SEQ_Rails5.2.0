@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Detected_at: 2020-02-04 13:53:41
+  Description: MyText
+  BoL: MyString
+  Status: false
+  user: one
+
+two:
+  Detected_at: 2020-02-04 13:53:41
+  Description: MyText
+  BoL: MyString
+  Status: false
+  user: two

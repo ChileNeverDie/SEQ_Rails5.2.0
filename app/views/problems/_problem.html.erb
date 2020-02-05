@@ -1,0 +1,18 @@
+<li id="problem-<%= problem.id %>">
+  <%= link_to gravatar_for(problem.user, size: 50), problem.user %>
+  
+  <span class="user"><%= link_to problem.user.name, problem.user %></span>
+  <span class="content">
+    <%= problem.Detected_at %> | <%= problem.ProductName %>| <%= problem.Description %>  
+  </span>
+  
+  
+  <span class="timestamp">
+    Created at <%= problem.created_at() %>
+    <% if current_user?(problem.user) %>
+      <%= link_to "delete", problem, method: :delete,
+                                     data: { confirm: "You sure?" } %>
+    <% end %> 
+  </span>
+  
+</li> 
