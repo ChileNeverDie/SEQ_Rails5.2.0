@@ -1,6 +1,16 @@
 class ProblemsController < ApplicationController
-before_action :logged_in_user, only: [:create, :destroy]
+before_action :logged_in_user, only: [:index, :create, :destroy]
 before_action :correct_user, only: :destroy
+
+  def index
+    @problems = Problem.paginate(page: params[:page])
+    time = Time.new.strftime("%Y%m%d%H%M%S")
+    filename = "Collection_at_" + time + ".csv"
+    respond_to do |format|
+      format.html
+      format.csv { send_data @problems.to_csv, filename: filename }
+    end
+  end
 
   def create
     @problem = current_user.problems.build(problem_params)

@@ -289,6 +289,14 @@ input {
       margin-right: 10px;
       margin-top: 5px;
     }
+    
+    .table {
+      table-layout: fixed;
+      .th{
+          
+      }
+    
+    }
   }
 
 aside {
@@ -304,4 +312,7 @@ span.image {
     border: 0;
   }
 
+
 }
+
+
