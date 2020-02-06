@@ -1,27 +1,34 @@
 <%= form_with(model: @problem, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   
-  <%= f.label :ProductID %>
+  <%= f.label :ProductID, "Product ID" %>
   <%= f.text_field :ProductID, class: 'form-control' %>
   
-  <%= f.label :ProductName %>
+  <%= f.label :ProductName, "Product Name"  %>
   <%= f.text_field :ProductName, class: 'form-control' %>
 
-  <%= f.label :Detected_at %>
-  <%= f.text_field :Detected_at, class: 'form-control', placeholder: "Please follow the format 20200101" %>
+  <%= f.label :Detected_at%>
+  <br>
+    <%= f.date_select :Detected_at, class: 'form-control',placeholder: "Format: YYYYMMDD" %>
+  </br>
   
+  <%= f.label :Description %>
   <div class="field">
     <%= f.text_area :Description, placeholder: "Compose new problem..." %>
   </div> 
   
-  <%= f.label :BoL %>
-  <%= f.text_field :BoL, class: 'form-control', placeholder: "Please only input 'Component' or 'BL'" %>
+  <%= f.label :BoL, "BoL" %>
+  <br>
+    <%= f.select :BoL, ['Component','BL'], class: 'form-control' %>
+  </br>
   
   <%= f.label :Status %>
-  <%= f.text_field :Status, class: 'form-control',placeholder: "Please input Open or Close" %>
+  <br>
+    <%= f.select :Status, ['Open','Closed'],class: 'form-control' %>
+  </br>
   
-  <%= f.label :link %>
-  <%= f.text_field :link, class: 'form-control',placeholder: "Please input the full CR link here" %>
+  <%= f.label :Link %>
+  <%= f.text_field :Link, class: 'form-control', placeholder: "Please input the full CR link here" %>
   
   <%= f.submit "Submit", class: "btn btn-primary" %>
 

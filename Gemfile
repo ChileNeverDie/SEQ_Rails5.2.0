@@ -14,6 +14,7 @@ gem 'fog-aws', '2.0.0'
 gem 'nokogiri', '1.10.7'
 gem 'will_paginate', '3.2.1'
 gem 'jquery-rails'
+gem 'flatpickr_rails'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap-sass'
 # Use Puma as the app server

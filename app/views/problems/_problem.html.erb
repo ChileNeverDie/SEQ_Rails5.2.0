@@ -3,11 +3,9 @@
   
   <span class="content">
     <span class="user"><%= link_to problem.user.name, problem.user %></span>
-    <%= problem.Detected_at%> | <%= problem.ProductName %> | <%= problem.Description %> | <li><%= link_to "CR", problem.link.to_s, :target => '_blank' %></li>
+    <%= problem.Detected_at.strftime("%Y-%m-%d") %> | <%= problem.ProductName %> | <%= problem.Description %> | <li><%= link_to "CR", problem.Link.to_s, :target => '_blank' %></li>
     <% if current_user?(problem.user) %>
       <%= link_to "delete", problem, method: :delete, data: { confirm: "You sure?" } %>
     <% end %> 
   </span>
-  
-  
 </li> 

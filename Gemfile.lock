@@ -91,6 +91,8 @@ GEM
     faker (2.10.1)
       i18n (>= 1.6, < 2)
     ffi (1.12.1)
+    flatpickr_rails (1.1.0)
+      railties (>= 3.0)
     fog-aws (2.0.0)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -244,6 +246,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   faker
+  flatpickr_rails
   fog-aws (= 2.0.0)
   jbuilder (~> 2.5)
   jquery-rails

@@ -32,7 +32,7 @@ before_action :correct_user, only: :destroy
   
   private
     def problem_params
-      params.require(:problem).permit(:ProductID,:ProductName,:content,:Description,:Status,:link,:BoL,:Detected_at)
+      params.require(:problem).permit(:ProductID,:ProductName,:content,:Description,:Status,:Link,:BoL,:Detected_at)
     end
     
     def correct_user

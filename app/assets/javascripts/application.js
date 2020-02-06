@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap
+//= require flatpickr
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
