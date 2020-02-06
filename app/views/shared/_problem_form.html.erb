@@ -27,10 +27,13 @@
     <%= f.select :Status, ['Open','Closed'],class: 'form-control' %>
   </br>
   
-  <%= f.label :Link %>
+  <%= f.label :CRNo, "CR Number" %>
+    <%= f.text_field :CRNo, class: 'form-control' %>
+  
+  <%= f.label :Link, "CR Link" %>
   <%= f.text_field :Link, class: 'form-control', placeholder: "Please input the full CR link here" %>
   
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= f.submit "Submit", class: "btn btn-success" %>
 
 <% end %> 
 

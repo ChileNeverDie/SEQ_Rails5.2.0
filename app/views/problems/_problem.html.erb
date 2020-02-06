@@ -1,11 +1,13 @@
 <li id="problem-<%= problem.id %>">
-  <!--<%= link_to gravatar_for(problem.user, size: 50), problem.user %>-->
+  <!--<%= link_to gravatar_for(problem.user, size: 50), problem.user %>#此处原用于显示头像-->
   
   <span class="content">
-    <span class="user"><%= link_to problem.user.name, problem.user %></span>
-    <%= problem.Detected_at.strftime("%Y-%m-%d") %> | <%= problem.ProductName %> | <%= problem.Description %> | <li><%= link_to "CR", problem.Link.to_s, :target => '_blank' %></li>
-    <% if current_user?(problem.user) %>
-      <%= link_to "delete", problem, method: :delete, data: { confirm: "You sure?" } %>
-    <% end %> 
+    <span class="user"><%= link_to problem.user.name, problem.user %> | <%= link_to "CR", problem.Link.to_s, :target => '_blank' %></span>
+    <%= problem.Detected_at.strftime("%Y-%m-%d") %> | <%= problem.ProductName %> | <%= problem.Description %> 
+    <span class="DO">
+      <% if current_user?(problem.user) %>
+        <%= link_to "delete", problem, method: :delete, data: { confirm: "You sure?" } %>
+      <% end %> 
+    </span>
   </span>
 </li> 

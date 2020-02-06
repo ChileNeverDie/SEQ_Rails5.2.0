@@ -36,7 +36,7 @@ textarea {
 /* navebar*/
 .navbar{
     margin-bottom: 0px;
-    border-radius: 5px;
+    border-radius: 0px;
     background: $green;    
     font-weight: bold;
     border: 0px solid; 
@@ -263,10 +263,16 @@ input {
   }
 } 
 
+.btn{
+  background-color: $green;
+}
+
 /* problems */
+
 .problems {
   list-style: none;
   padding: 0;
+  margin-left: 0px;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -279,25 +285,20 @@ input {
     
     .content {
       display: block;
-      margin-left: 60px;
-      img {
-        display: block;
-        padding: 5px 0;
-      }
+      margin-left: 0px;
     }
     
     .timestamp {
       color: $gray-light;
       display: block;
-      margin-left: 60px;
+      margin-left: 0px;
     }
     
-    .gravatar {
-      float: left;
-      margin-right: 10px;
-      margin-top: 5px;
-    }
-
+  //   .gravatar {
+  //     float: left;
+  //     margin-right: 10px;
+  //     margin-top: 5px;
+  //   }
   }
 
 aside {
