@@ -63,6 +63,11 @@ textarea {
   background-color: white;
 }
 
+.navbar .nav >li .dropdown .dropdown_toggle >a:active{
+  color: $green;
+  background-color: white;
+}
+
 /* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -117,6 +122,8 @@ p {
 
 /* footer */
 footer {
+  position: relative;
+  right: 100px;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px 
@@ -129,7 +136,7 @@ footer a {
 }
 
 footer a:hover {
-  margin-right: 20px;
+  margin-right: 0px;
   color: $gray-darker; 
 }
 
@@ -263,12 +270,8 @@ input {
   }
 } 
 
-.btn{
-  background-color: $green;
-}
 
 /* problems */
-
 .problems {
   list-style: none;
   padding: 0;
