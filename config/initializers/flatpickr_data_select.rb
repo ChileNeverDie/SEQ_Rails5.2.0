@@ -1,6 +1,5 @@
 module ActionView
   module Helpers
-    before_filter :set_locale   
       
     def set_locale   
        I18n.locale = extract_locale_from_uri   
