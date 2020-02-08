@@ -1,7 +1,6 @@
 <%= form_with(model: @problem, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-
   <%= f.label :ProductID, "Product ID" %>
   <%= f.text_field :ProductID, class: 'form-control' %>
   
