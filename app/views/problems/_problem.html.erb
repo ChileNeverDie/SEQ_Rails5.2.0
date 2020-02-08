@@ -4,11 +4,11 @@
      <%= problem.ProductName %> | <%= problem.Description %> 
     <span class="DO">
       <% if current_user?(problem.user) %>
-        <%= link_to "View", problem %>
+        <%= link_to "Detail", problem %>
         <%= link_to "Edit", edit_problem_path(problem) %>
         <%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %>
       <% else %>
-        <%= link_to "View", problem%>
+        <%= link_to "Detail", problem%>
       <% end %> 
     </span>
   </span>

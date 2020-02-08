@@ -8,6 +8,7 @@ class Problem < ApplicationRecord
   validates :BoL, presence: true, inclusion: {in:['Component','BL'],message:'Must be "Component" or "BL"'} 
   validates :Description, presence:true, length: {maximum: 500}
   validates :Status, presence: true, inclusion: {in:['Open','Close'],message:'Please input Open or Close'} 
+  validates :Supplier, presence: true
 
 
 #   # 返回调整尺寸后的图像，供显示                            

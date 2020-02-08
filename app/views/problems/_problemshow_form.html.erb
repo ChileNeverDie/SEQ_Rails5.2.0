@@ -15,6 +15,9 @@
   <div class="field">
     <%= f.text_area :Description, placeholder: "Compose new problem..." %>
   </div> 
+    
+  <%= f.label :Supplier, "Supplier"  %>
+  <%= f.text_field :Supplier, class: 'form-control' %>
   
   <%= f.label :BoL, "BoL" %>
   <br>
@@ -23,7 +26,7 @@
   
   <%= f.label :Status %>
   <br>
-    <%= f.select :Status, ['Open','Closed'],class: 'form-control' %>
+    <%= f.select :Status, ['Open','Close'],class: 'form-control' %>
   </br>
   
   <%= f.label :CRNo, "CR Number" %>

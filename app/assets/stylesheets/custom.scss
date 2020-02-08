@@ -259,6 +259,8 @@ input {
   }
 } 
 
+
+
 /* Problems index */
 .problems {
   list-style: none;
@@ -270,6 +272,9 @@ input {
   }
 } 
 
+.table{
+  solid: $green;
+}
 
 /* problems */
 .problems {
@@ -295,6 +300,10 @@ input {
       color: $gray-light;
       display: block;
       margin-left: 0px;
+    }
+    
+    .table{
+      solid: $green;
     }
     
   //   .gravatar {

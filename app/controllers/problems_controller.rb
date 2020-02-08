@@ -25,7 +25,7 @@ before_action :correct_user, only: :destroy
     if @problem.update_attributes(problem_params)
       # 处理更新成功的情况
       flash[:success] = "Profile updated"
-      redirect_to @problem
+      redirect_to problems_path
     else
       render 'edit'
     end
@@ -51,7 +51,7 @@ before_action :correct_user, only: :destroy
   
   private
     def problem_params
-      params.require(:problem).permit(:ProductID,:ProductName,:content,:CRNo, :Description,:Status,:Link,:BoL,:Detected_at)
+      params.require(:problem).permit(:ProductID,:ProductName,:content,:CRNo, :Description,:Status,:Link,:BoL,:Detected_at,:Supplier)
     end
     
     def correct_user
