@@ -11,6 +11,25 @@ before_action :correct_user, only: :destroy
       format.csv { send_data @problems.to_csv, filename: filename }
     end
   end
+  
+  def show
+    @problem = Problem.find(params[:id])
+  end
+  
+  def edit
+    @problem = Problem.find(params[:id])
+  end
+  
+  def update
+    @problem = Problem.find(params[:id])
+    if @problem.update_attributes(problem_params)
+      # 处理更新成功的情况
+      flash[:success] = "Profile updated"
+      redirect_to @problem
+    else
+      render 'edit'
+    end
+  end
 
   def create
     @problem = current_user.problems.build(problem_params)
@@ -32,7 +51,7 @@ before_action :correct_user, only: :destroy
   
   private
     def problem_params
-      params.require(:problem).permit(:ProductID,:ProductName,:content,:Description,:Status,:Link,:BoL,:Detected_at)
+      params.require(:problem).permit(:ProductID,:ProductName,:content,:CRNo, :Description,:Status,:Link,:BoL,:Detected_at)
     end
     
     def correct_user
