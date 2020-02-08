@@ -9,8 +9,9 @@
 
 <table border = "1" width = 100%>
   <thead>
-    <tr class="tha">
-      <th class="tha">Product Name</th>
+    <tr>
+      <th>User</th>
+      <th>Product Name</th>
       <th>Detected at</th>
       <th>Supplier</th>
       <th>CR No.</th>
@@ -25,11 +26,18 @@
     <% @problems.each do |problem| %>
       <tr>
         <%= will_paginate %>
+        <td align=center, class="user"><%= link_to problem.user.name, problem.user %></td>
         <td align=center><%= problem.ProductName %></td>
         <td align=center><%= problem.Detected_at.strftime("%Y-%m-%d")%></td>
         <td align=center><%= problem.Supplier %></td>
         <td align=center><%= problem.CRNo %></td>
-        <td align=center><%= link_to "Link",problem.Link, :target => '_blank' %></td>
+        <span>
+          <% if problem.Link.to_s.blank? %>
+            <td></td>
+          <% else %>
+            <td align=center><%= link_to "Link",problem.Link, :target => '_blank' %></td>
+          <% end %>
+        </span>
         <td width=50% align=left><%= problem.Description %></td>
         <td align=center><%= problem.Status %></td>
         <!--<td align=center><%= link_to "Detail", problem %></td>-->
