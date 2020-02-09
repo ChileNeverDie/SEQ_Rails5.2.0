@@ -270,10 +270,14 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
-} 
+}
 
 .table{
-  solid: $green;
+  border: 3px;
+  solid: black;
+  .table tr th, .table tr td {
+    
+  }
 }
 
 /* problems */
