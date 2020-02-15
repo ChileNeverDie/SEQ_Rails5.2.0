@@ -1,15 +1,26 @@
 <li id="problem-<%= problem.id %>">
   <span class="content">
-    <span class="user"><%= link_to problem.user.name, problem.user %> | <%= problem.Detected_at.strftime("%Y-%m-%d") %> | <%= link_to "CR", problem.Link.to_s, :target => '_blank' %></span>
-     <%= problem.ProductName %> | <%= problem.Description %> 
-    <span class="DO">
-      <% if current_user?(problem.user) %>
-        <%= link_to "Detail", problem %>
-        <%= link_to "Edit", edit_problem_path(problem) %>
-        <%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %>
-      <% else %>
-        <%= link_to "Detail", problem%>
-      <% end %> 
-    </span>
+    <table width=100%>
+      <td width=10%><%= problem.Detected_at.strftime("%Y-%m-%d") %></td>
+      <td width=10% align=center><%= link_to "CR", problem.Link.to_s, :target => '_blank' %></td>
+      <td width=10%><%= problem.ProductName %></td>
+      <td><%= problem.Description %></td>
+      <td align=center width=5%><%= link_to "Detail", problem %></td>
+      <td align=center width=5%><%= link_to "Edit", edit_problem_path(problem) %></td>
+      <td width=5%><%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %></td>
+    </table>
+    
+    <!--旧布局-->
+    <!--<span><%= problem.Detected_at.strftime("%Y-%m-%d") %> | <%= link_to "CR", problem.Link.to_s, :target => '_blank' %></span>-->
+    <!-- <%= problem.ProductName %> | <%= problem.Description %> -->
+    <!--<span class="DO">-->
+    <!--  <% if current_user?(problem.user) %>-->
+    <!--    <%= link_to "Detail", problem %>-->
+    <!--    <%= link_to "Edit", edit_problem_path(problem) %>-->
+    <!--    <%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %>-->
+    <!--  <% else %>-->
+    <!--    <%= link_to "Detail", problem%>-->
+    <!--  <% end %> -->
+    <!--</span>-->
   </span>
 </li> 
