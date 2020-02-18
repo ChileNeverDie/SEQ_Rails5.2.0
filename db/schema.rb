@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_08_110829) do
+ActiveRecord::Schema.define(version: 2020_02_04_154246) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -34,18 +34,18 @@ ActiveRecord::Schema.define(version: 2020_02_08_110829) do
   end
 
   create_table "problems", force: :cascade do |t|
-    t.datetime "Detected_at"
-    t.text "Description"
-    t.string "BoL"
-    t.string "Status"
-    t.string "ProductID"
-    t.string "ProductName"
-    t.string "CRNo"
-    t.string "Link"
+    t.datetime "detected_at"
+    t.text "description"
+    t.string "lob"
+    t.string "status"
+    t.string "productid"
+    t.string "productname"
+    t.string "crno"
+    t.string "link"
+    t.string "supplier"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "Supplier"
     t.index ["user_id"], name: "index_problems_on_user_id"
   end
 

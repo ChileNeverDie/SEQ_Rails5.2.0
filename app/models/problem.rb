@@ -3,12 +3,12 @@ class Problem < ApplicationRecord
 
   default_scope -> { order(created_at: :desc) } 
   validates :user_id, presence: true 
-  validates :ProductID, presence: true
-  validates :ProductName, presence: true
-  validates :BoL, presence: true, inclusion: {in:['Component','BL'],message:'Must be "Component" or "BL"'} 
-  validates :Description, presence:true, length: {maximum: 500}
-  validates :Status, presence: true, inclusion: {in:['Open','Close'],message:'Please input Open or Close'} 
-  validates :Supplier, presence: true
+  validates :productid, presence: true
+  validates :productname, presence: true
+  validates :lob, presence: true, inclusion: {in:['Component','BL'],message:'Must be "Component" or "BL"'} 
+  validates :description, presence:true, length: {maximum: 500}
+  validates :status, presence: true, inclusion: {in:['Open','Close'],message:'Please input Open or Close'} 
+  validates :supplier, presence: true
 
 
 #   # 返回调整尺寸后的图像，供显示                            

@@ -5,14 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.create!(name: "Admin Account",
-#             email: "Admin@se.com",
-#             title: "Senior SQE",
-#             password: "111111",
-#             password_confirmation: "111111",
-#             admin: true)
+User.create!(name: "Admin Account",
+            email: "Admin@se.com",
+            title: "Senior SQE",
+            password: "111111",
+            password_confirmation: "111111",
+            admin: true)
             
-#尝试过种子测试分页但是失败了。。。
 #Users
 50.times do |n|
   name = "Test-#{n+100}"
@@ -26,26 +25,29 @@
   password_confirmation: password)
 end
 
+
+# #尝试过种子测试分页但是失败了。。。
 # # Problems
 # users = User.order(:created_at).take(6)
 # 50.times do
-#   Description = Faker::Lorem.sentence(5)
-#   Status = "Open"
-#   ProductName = "Test"
-#   ProductID = "001"
-#   Detected_at = Time.zone.now
-#   BoL = "BL"
-#   CRNo = "001"
-#   Link = "https://www.baidu.com"
-#   Supplier = "G-Shank
+#   description = Faker::Lorem.sentence(5)
+#   status = "Open"
+#   productname = "Test"
+#   productid = "001"
+#   detected_at = Time.zone.now
+#   lob = "BL"
+#   crno = "001"
+#   link = "https://www.baidu.com"
+#   supplier = "G-Shank
   
-#   users.each { |user| user.problems.create!(Description: Description
-#                                             Status: Status
-#                                             ProductID: ProductID
-#                                             ProductName: ProductName
-#                                             Detected_at: Detected_at
-#                                             BoL: BoL
-#                                             CRNo: CRNo
-#                                             Link: Link
-#                                             Supplier: Supplier) }
+# users.each do |user|
+#   user.problems.create!(description: description
+#                         status: status
+#                         productid: productid
+#                         productname: productname
+#                         detected_at: detected_at
+#                         lob: lob
+#                         crno: crno
+#                         link: link
+#                         supplier: supplier) 
 # end

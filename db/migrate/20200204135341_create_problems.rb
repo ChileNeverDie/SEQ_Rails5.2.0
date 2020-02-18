@@ -1,14 +1,15 @@
 class CreateProblems < ActiveRecord::Migration[5.2]
   def change
     create_table :problems do |t|
-      t.datetime :Detected_at
-      t.text :Description
-      t.string :BoL
-      t.string :Status
-      t.string :ProductID
-      t.string :ProductName
-      t.string :CRNo
-      t.string :Link
+      t.datetime :detected_at
+      t.text :description
+      t.string :lob
+      t.string :status
+      t.string :productid
+      t.string :productname
+      t.string :crno
+      t.string :link
+      t.string :supplier
       t.references :user, foreign_key: true
 
       t.timestamps

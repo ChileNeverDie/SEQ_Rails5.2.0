@@ -1,40 +1,40 @@
 <%= form_with(model: @problem, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   
-  <%= f.label :ProductID, "Product ID" %>
-  <%= f.text_field :ProductID, class: 'form-control' %>
+  <%= f.label :productid, "Product ID" %>
+  <%= f.text_field :productid, class: 'form-control' %>
   
-  <%= f.label :ProductName, "Product Name"  %>
-  <%= f.text_field :ProductName, class: 'form-control' %>
+  <%= f.label :productname, "Product Name"  %>
+  <%= f.text_field :productname, class: 'form-control' %>
 
-  <%= f.label :Detected_at%>
+  <%= f.label :detected_at%>
   <br>
-    <%= f.date_select :Detected_at, class: 'form-control',placeholder: "Format: YYYYMMDD" %>
+    <%= f.date_select :detected_at, class: 'form-control',placeholder: "Format: YYYYMMDD" %>
   </br>
   
-  <%= f.label :Description %>
+  <%= f.label :description %>
   <div class="field">
-    <%= f.text_area :Description, placeholder: "Compose new problem..." %>
+    <%= f.text_area :description, placeholder: "Compose new problem..." %>
   </div> 
   
-  <%= f.label :Supplier, "Supplier"  %>
-  <%= f.text_field :Supplier, class: 'form-control' %>
+  <%= f.label :supplier, "Supplier"  %>
+  <%= f.text_field :supplier, class: 'form-control' %>
   
-  <%= f.label :BoL, "BoL" %>
+  <%= f.label :lob, "LoB" %>
   <br>
-    <%= f.select :BoL, ['Component','BL'], class: 'form-control' %>
+    <%= f.select :lob, ['Component','BL'], class: 'form-control' %>
   </br>
   
-  <%= f.label :Status %>
+  <%= f.label :status %>
   <br>
-    <%= f.select :Status, ['Open','Close'],class: 'form-control' %>
+    <%= f.select :status, ['Open','Close'],class: 'form-control' %>
   </br>
   
-  <%= f.label :CRNo, "CR Number" %>
-    <%= f.text_field :CRNo, class: 'form-control' %>
+  <%= f.label :crno, "CR Number" %>
+    <%= f.text_field :crno, class: 'form-control' %>
   
-  <%= f.label :Link, "CR Link" %>
-  <%= f.text_field :Link, class: 'form-control', placeholder: "Please input the full CR link here" %>
+  <%= f.label :link, "CR Link" %>
+  <%= f.text_field :link, class: 'form-control', placeholder: "Please input the full CR link here" %>
   
   <%= f.submit "Submit", class: "btn btn-success" %>
 

@@ -48,10 +48,9 @@ before_action :correct_user, only: :destroy
     redirect_to request.referrer || root_url
   end
   
-  
   private
     def problem_params
-      params.require(:problem).permit(:ProductID,:ProductName,:content,:CRNo, :Description,:Status,:Link,:BoL,:Detected_at,:Supplier)
+      params.require(:problem).permit(:productid,:productname,:crno,:description,:status,:link,:lob,:detected_at,:supplier)
     end
     
     def correct_user
