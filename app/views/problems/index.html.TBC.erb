@@ -1,0 +1,115 @@
+<% provide(:title, 'Problems List') %>
+<h1>Problems List</h1>
+
+<div class="problems">
+  <%= render @problems %>
+</div>
+<!--<table border="1" align=center>-->
+<!--  <tr>-->
+<!--    <th></th>-->
+<!--    <th>Total</th>-->
+<!--    <th>BL</th>-->
+<!--    <th>Component</th>-->
+<!--  </tr>-->
+
+  <!--从一开始到现在所有问题数量及细分-->
+<!--  <tr>-->
+<!--    <th width=80px>All</th>-->
+<!--    <td width=80px><%= @problems.count %></td>-->
+<!--    <td width=80px><%= @problems.where("lob"=>"BL").count %></td>-->
+<!--    <td width=80px><%= @problems.where("lob"=>"Component").count %></td>-->
+<!--  </tr>-->
+
+  <!--去年一年内产生问题数量及细分-->
+<!--  <tr>-->
+<!--    <th width=80px>Last Year</th>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where detected_at > date('now','start of year','-1 year') AND detected_at < date('now','start of year','1 second')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'BL' AND detected_at > date('now','start of year','-1 year') AND detected_at < date('now','start of year','1 second')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'Component' AND detected_at > date('now','start of year','-1 year') AND detected_at < date('now','start of year','1 second')").count %></td>-->
+<!--  </tr>-->
+
+  <!--滚动的12个月内产生的问题数量及细分,包括本月数据,今天是2020.2.15，查询2019.2.15-至今的数据-->
+<!--  <tr>-->
+<!--    <th width=130px>Previous 12 Month</th>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where detected_at > date('now','start of day','-12 month') AND detected_at < date('now')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'BL' AND detected_at > date('now','start of day','-12 month') AND detected_at < date('now')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'Component' AND detected_at > date('now','start of day','-12 month') AND detected_at < date('now')").count %></td>-->
+<!--  </tr>-->
+
+  <!--上个月产生的问题数量及细分，不包括本月数据-->
+<!--  <tr>-->
+<!--    <th>Last Month</th>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where detected_at > date('now','start of month','-1 month') AND detected_at < date('now','start of month','-1 second')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'BL' AND detected_at > date('now','start of month',' -1 month') AND detected_at < date('now','start of month','-1 second')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'Component' AND detected_at > date('now','start of month',' -1 month')  AND detected_at < date('now','start of month','-1 second')").count %></td>-->
+<!--  </tr>-->
+
+  <!--本月产生问题及细分-->
+<!--  <tr>-->
+<!--    <th>This Month</th>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where detected_at > date('now','start of month','1 second')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'BL' AND detected_at > date('now','start of month','1 second')").count %></td>-->
+<!--    <td width=80px><%= @problems.find_by_sql("select * from problems where lob = 'Component' AND detected_at > date('now','start of month','1 second')").count %></td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<span class="button">
+  <p>
+    <%= link_to "Download", problems_path(format: "csv"),class: "btn btn-success"  %>
+    Search function to be finished  
+    <div>
+      <form class="navbar-form d-none d-lg-flex mr-2 form-search active" action="/search" method="GET">
+        <i class="fa btn-search fa-search"></i>
+        <input class="form-control" name="q" type="text" value placeholder="Search..."> 
+      </form>
+    </div>
+  </p>
+</span>
+
+<!--<table border = "1" width = 100%>-->
+<!--    <tr>-->
+<!--      <th align="center">User</th>-->
+<!--      <th>Product Name</th>-->
+<!--      <th>Detected at</th>-->
+<!--      <th>Supplier</th>-->
+<!--      <th>CR No.</th>-->
+<!--      <th>CR Link</th>-->
+<!--      <th class="tha">Description</th>-->
+<!--      <th>Status</th>-->
+<!--      <th colspan="3">Operation</th>-->
+<!--    </tr>-->
+
+<!--  <tbody>-->
+<!--    <% @problems.each do |problem| %>-->
+<!--      <tr>-->
+<!--        <%= will_paginate %>-->
+<!--        <td align=center><%= link_to problem.user.name, problem.user %></td>-->
+<!--        <td align=center><%= problem.productname %></td>-->
+<!--        <td align=center><%= problem.detected_at.strftime("%Y-%m-%d")%></td>-->
+<!--        <td align=center><%= problem.supplier %></td>-->
+<!--        <td align=center><%= problem.crno %></td>-->
+<!--        <span>-->
+<!--          <% if problem.link.to_s.blank? %>-->
+<!--            <td></td>-->
+<!--          <% else %>-->
+<!--            <td align=center><%= link_to "Link",problem.link, :target => '_blank' %></td>-->
+<!--          <% end %>-->
+<!--        </span>-->
+<!--        <td width=50% align=left><%= problem.description %></td>-->
+<!--        <td align=center><%= problem.status %></td>-->
+<!--        <span class="DO">-->
+<!--          <% if current_user?(problem.user) %>-->
+<!--            <td align=center width =3%><%= link_to "Detail", problem %></td>-->
+<!--            <td align=center width =3%><%= link_to "Edit", edit_problem_path(problem) %></td>-->
+<!--            <td width = 3%><%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %></td>-->
+<!--          <% else %>-->
+<!--            <td><%= link_to "Detail", problem%></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--          <% end %> -->
+<!--        </span>-->
+<!--        <%= will_paginate %>-->
+<!--      </tr>-->
+<!--    <% end %>-->
+<!--  </tbody>-->
+<!--</table>-->
