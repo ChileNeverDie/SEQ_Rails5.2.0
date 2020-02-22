@@ -25,7 +25,7 @@ before_action :correct_user, only: :destroy
     if @problem.update_attributes(problem_params)
       # 处理更新成功的情况
       flash[:success] = "Profile updated"
-      redirect_to problems_path
+      redirect_to home_path
     else
       render 'edit'
     end
