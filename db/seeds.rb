@@ -13,9 +13,9 @@ User.create!(name: "Admin Account",
             admin: true)
             
 #Users
-50.times do |n|
-  name = "Test-#{n+100}"
-  email = "Test-#{n+100}@se.com"
+10.times do |n|
+  name = "Test-#{n+1}"
+  email = "Test-#{n+1}@se.com"
   password = "111111"
   title = "SQE"
   User.create!(name: name,
