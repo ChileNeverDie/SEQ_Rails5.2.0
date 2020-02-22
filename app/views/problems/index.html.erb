@@ -16,15 +16,15 @@
 
 <table border = "1" width = 100%>
     <tr>
-      <th align="center">User</th>
-      <th>Product Name</th>
-      <th>Detected at</th>
-      <th>Supplier</th>
-      <th>CR No.</th>
-      <th>CR Link</th>
-      <th class="tha">Description</th>
-      <th>Status</th>
-      <th colspan="3">Operation</th>
+      <th style="text-align:center;vertical-align:middle;" width=7%>User</th>
+      <th style="text-align:center;vertical-align:middle;" width=7%>Product Name</th>
+      <th style="text-align:center;vertical-align:middle;" width=8%>Detected at</th>
+      <th style="text-align:center;vertical-align:middle;" width=7%>Supplier</th>
+      <th style="text-align:center;vertical-align:middle;" width=8%>CR No.</th>
+      <th style="text-align:center;vertical-align:middle;">CR Link</th>
+      <th style="text-align:center;vertical-align:middle;">Description</th>
+      <th style="text-align:center;vertical-align:middle;">Status</th>
+      <th colspan="3" style="text-align:center;vertical-align:middle;">Operation</th>
     </tr>
 
   <tbody>
@@ -35,7 +35,7 @@
         <td align=center><%= problem.productname %></td>
         <td align=center><%= problem.detected_at.strftime("%Y-%m-%d")%></td>
         <td align=center><%= problem.supplier %></td>
-        <td align=center><%= problem.crno %></td>
+        <td align=left><%= problem.crno %></td>
         <span>
           <% if problem.link.to_s.blank? %>
             <td></td>
