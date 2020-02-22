@@ -14,6 +14,50 @@
   </p>
 </span>
 
-<div class="problems">
-  <%= render @problems %>
-</div>
+<table border = "1" width = 100%>
+    <tr>
+      <th align="center">User</th>
+      <th>Product Name</th>
+      <th>Detected at</th>
+      <th>Supplier</th>
+      <th>CR No.</th>
+      <th>CR Link</th>
+      <th class="tha">Description</th>
+      <th>Status</th>
+      <th colspan="3">Operation</th>
+    </tr>
+
+  <tbody>
+    <% @problems.each do |problem| %>
+      <tr>
+        <%= will_paginate %>
+        <td align=center><%= link_to problem.user.name, problem.user %></td>
+        <td align=center><%= problem.productname %></td>
+        <td align=center><%= problem.detected_at.strftime("%Y-%m-%d")%></td>
+        <td align=center><%= problem.supplier %></td>
+        <td align=center><%= problem.crno %></td>
+        <span>
+          <% if problem.link.to_s.blank? %>
+            <td></td>
+          <% else %>
+            <td align=center><%= link_to "Link",problem.link, :target => '_blank' %></td>
+          <% end %>
+        </span>
+        <td width=50% align=left><%= problem.description %></td>
+        <td align=center><%= problem.status %></td>
+        <span class="DO">
+          <% if current_user?(problem.user) %>
+            <td align=center width =3%><%= link_to "Detail", problem %></td>
+            <td align=center width =3%><%= link_to "Edit", edit_problem_path(problem) %></td>
+            <td width = 3%><%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %></td>
+          <% else %>
+            <td><%= link_to "Detail", problem%></td>
+            <td></td>
+            <td></td>
+          <% end %> 
+        </span>
+        <%= will_paginate %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
