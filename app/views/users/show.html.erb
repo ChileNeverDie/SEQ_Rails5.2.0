@@ -12,6 +12,13 @@
   <div class="col-md-8">
     <% if @user.problems.any? %>
       <h3>Problems (<%= @user.problems.count %>)</h3>
+      <table width=100%>
+        <th width=10%>CR Date</th>
+        <th width=10%>CR Link</th>
+        <th width=10%>Product</th>
+        <th>Description</th>
+        <th width=15%>Operation</th>
+      </table>
       <ol class="problems">
         <%= render @problems %>
       </ol>

@@ -1,13 +1,18 @@
 <li id="problem-<%= problem.id %>">
+  
   <span class="content">
     <table width=100%>
       <td width=10%><%= problem.detected_at.strftime("%Y-%m-%d") %></td>
       <td width=10% align=center><%= link_to "CR", problem.link.to_s, :target => '_blank' %></td>
       <td width=10%><%= problem.productname %></td>
       <td><%= problem.description %></td>
-      <td align=center width=5%><%= link_to "Detail", problem %></td>
-      <td align=center width=5%><%= link_to "Edit", edit_problem_path(problem) %></td>
-      <td width=5%><%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %></td>
+      <% if current_user?(problem.user) %>
+        <td align=center width=5%><%= link_to "Detail", problem %></td>
+        <td align=center width=5%><%= link_to "Edit", edit_problem_path(problem) %></td>
+        <td align=center width=5%><%= link_to "Delete", problem, method: :delete, data: { confirm: "You sure?" } %></td>
+      <% else %>
+        <td align=center width=15%><%= link_to "Detail", problem%></td>
+      <% end %> 
     </table>
     
     <!--旧布局-->
