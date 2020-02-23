@@ -18,9 +18,9 @@ class Problem < ApplicationRecord
 
   def self.to_csv
     CSV.generate do |csv|
-      csv << column_names
+      csv << ['PIC','Detected At','Product No.','Product Name','Supplier','LoB','Description','Status']
       all.each do |problem|
-        csv << problem.attributes.values_at(*column_names)
+        csv << [problem.user.name,problem.detected_at,problem.productid.to_s,problem.productname,problem.supplier,problem.lob,problem.description,problem.status]
       end
     end
   end
